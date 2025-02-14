@@ -1136,6 +1136,20 @@
   body.dark-mode .player-card:hover img {
       filter: brightness(0.2); /* Adjust hover brightness */
   }
+  body.dark-mode .hero-content{
+      margin-left: 35px;
+      height: 653px;
+      width: 490px;
+      background-color: var(--section-background); /* Example background color - adjust as needed */
+      padding: 30px; /* Add some padding to the content area */
+      border-radius: 8px; /* Optional: Add rounded corners */
+    
+  }
+  body.dark-mode .hero-content p {
+    margin-bottom: 14px;
+    line-height: 1.6;
+    color: var(--light);
+  }
     /* Main Content Styles */
     main {
       display: flex;
@@ -1162,11 +1176,12 @@
 .hero-content {
   flex: 1;
   height: 243px;
-  width: 490px;
+  width: 690px;
   background-color: #f8f8f8; /* Example background color - adjust as needed */
   padding: 30px; /* Add some padding to the content area */
   border-radius: 8px; /* Optional: Add rounded corners */
 }
+
 
 
     .hero-image {
@@ -1200,6 +1215,63 @@
       margin-bottom: 14px;
       line-height: 1.6;
     }
+    @media (max-width: 992px) {
+      main {
+          flex-direction: column; /* Stack elements vertically */
+          align-items: center; /* Center horizontally */
+          padding: 50px; /* Reduce padding */
+          margin-left: 0; /* Remove left margin */
+      }
+  
+      .hero {
+          flex-direction: column; /* Stack hero elements */
+          align-items: center;  /* Center hero content */
+          text-align: center; /* Center text within hero content */
+          gap: 20px;
+      }
+  
+      .hero-image {
+          width: 80%; /* Make image take up more width */
+          padding-right: 0; /* Remove right padding */
+          margin-bottom: 20px; /* Add space below image */
+      }
+  
+      .hero-image img {
+          max-width: 100%;
+          height: auto; /* Maintain aspect ratio */
+      }
+  
+      .hero-content {
+          width: 80%; /* Occupy more width */
+          margin-top: 0; /* Remove top margin */
+          margin-left: 0; /* Remove left margin */
+          height: auto; /* Allow height to adjust */
+          padding: 20px; /* Adjust padding */
+      }
+  
+      .hero-content h2 {
+          font-size: 36px; /* Slightly smaller heading */
+      }
+  }
+  
+  @media (max-width: 768px) {
+      .hero-image {
+          width: 90%; /* Even more width on smaller screens */
+      }
+  
+      .hero-content {
+          width: 90%;
+          padding: 15px; /* Further reduce padding */
+      }
+  
+      .hero-content h2 {
+          font-size: 28px; /* Smaller heading */
+      }
+  
+      .hero-content p {
+          font-size: 14px; /* Slightly smaller paragraph text */
+      }
+  }
         /* Example styles - replace with your desired colors, fonts, etc. */
     body {
       font-family: sans-serif; /* Example */

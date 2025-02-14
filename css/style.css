@@ -20,7 +20,7 @@ body {
 /* Dark Mode Styles */
 body.dark-mode {
   --text-color: #f7f7f7;   /* Dark mode text color */
-  --heading-color: #F9AA33; /* Dark mode heading color */
+  --heading-color:  #fc8500; /* Dark mode heading color */
   --background-color: #232F34; /* Dark mode body background */
   --section-background: #344955; /* Dark mode section background */
 }
@@ -362,7 +362,17 @@ body.dark-mode .slider:before {
     position: relative;
     min-height: 450px;
   }
+  .logo{
+    width: 50px;
+  height: 50px;
 
+  }
+  .row h1{
+    font-size: x-large;
+  }
+  .row p{
+    font-size: medium;
+  }
   #header-carousel .carousel-item img {
     position: absolute;
     width: 100%;
@@ -434,7 +444,11 @@ body.dark-mode .slider:before {
 
 /*** Service ***/
 .service-item {
-  box-shadow: 0 0 45px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.6);
+  background-color: var(--secondary);
+}
+body.dark-mode .service-item{
+  background-color: var(--section-background);
 }
 .service-item img{
   width: 100px;
@@ -611,7 +625,7 @@ body.dark-mode .slider:before {
 .video-popup-content {
   background-color: #fefefe;
   margin: 15% auto;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #888;
   width: 80%;
   max-width: 800px;
@@ -634,9 +648,16 @@ body.dark-mode .slider:before {
 
 #popup-video {
   width: 100%;
+  height: 500px;
   max-width: 800px;
 }
-
+@media (max-width: 768px) {
+  #popup-video {
+    width: 100%;
+    height: 250px;
+    max-width: 800px;
+  }
+}
 .play-button {
   position: absolute;
   top: 50%;
@@ -699,9 +720,6 @@ body.dark-mode .slider:before {
   filter: brightness(1.1);
 }
 
-.play-button:hover,
-.play-button i:hover {
-}
 
 /* Optional: Change color on hover */
 .play-button:hover,
@@ -727,10 +745,6 @@ body.dark-mode .slider:before {
 .swiper-container {
   width: 100%;
   position: relative;
-}
-
-.swiper-slide {
-  /* Add any necessary swiper-slide styles here */
 }
 
 .player-card {
@@ -1147,50 +1161,111 @@ body.dark-mode .player-card img {
 body.dark-mode .player-card:hover img {
     filter: brightness(0.2); /* Adjust hover brightness */
 }
-  /* Gallery Styles */
-  .portfolio .portfolio-item {
-    position: relative;
-    overflow: hidden;
+/* Gallery Styles */
+.portfolio .portfolio-item {
+  position: relative;
+  overflow: hidden;
+  filter: brightness(0.9); /* Slightly darken images */
+  margin-bottom: 100px;
+  margin-top: 40px;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* For smooth transitions */
 }
 
 .portfolio .portfolio-item img {
-    transition: all 0.5s ease;
-    width: 500px;
-    height: 350px;
-    object-fit: cover;
+  transition: all 0.5s ease;
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
 }
 
 .portfolio .portfolio-item:hover img {
-    transform: scale(1.1);
+  transform: scale(1.1);
+  filter: blur(3px);
 }
 
 .portfolio-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .portfolio-item {
-    width: calc(33.33% - 30px);
-    margin: 15px;
-    box-sizing: border-box;
+  width: calc(33.33% - 30px);
+  margin: 15px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 }
 
 @media (max-width: 992px) {
-    .portfolio-item {
-        width: calc(50% - 30px);
-    }
+  .portfolio-item {
+      width: calc(50% - 30px);
+  }
 }
 
 @media (max-width: 768px) {
-    .portfolio-item {
-        width: 100%;
-    }
+  .portfolio-item {
+      width: 100%;
+  }
 }
 
-/* glightbox styles - customize as needed */
-.glightbox-container {
-    z-index: 9999;
+
+/* Overlay Styles */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Initially transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s ease, opacity 0.5s ease; /* Both background and opacity */
+  opacity: 0; /* Initially hidden */
+}
+
+.portfolio-item:hover .overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black on hover */
+  opacity: 1; /* Show on hover */
+}
+
+.overlay button { /* "See More" button styles */
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: 0.5s;
+  font-weight: 500;
+  background-color: transparent;
+  cursor: pointer; /* Make it look like a button */
+}
+
+.overlay button:hover {
+  background-color: var(--primary); /* Use your primary color on hover */
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Image Title Styles */
+.image-title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.glightbox-caption { /* Or whatever class glightbox uses */
+    font-size: 14px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 3px;
 }
 /*--------------------------------------------------------------
 # Contact Section
@@ -1375,4 +1450,132 @@ body.dark-mode .player-card:hover img {
   100% {
     transform: rotate(360deg);
   }
+}
+/* CSS for the timeline */
+/* CSS for the timeline */
+.timeline {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden; /* Hide content initially */
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: var(--primary); /* Your primary orange */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1;
+}
+
+.timeline-container {
+  padding: 20px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Move down slightly */
+  transition: opacity 0.8s ease, transform 0.8s ease; /* Smooth transitions */
+}
+
+.timeline-container.left {
+  left: 0;
+}
+
+.timeline-container.right {
+  left: 50%;
+}
+
+.timeline-container.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 18px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid var(--light); /* Your default light color */
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--light);
+}
+
+.timeline-container.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 18px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid var(--light); /* Your default light color */
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--light) transparent transparent;
+}
+
+.timeline-container.active { /* Active state for animation */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.timeline-content {
+  padding: 20px 30px;
+  background-color: var(--background-color);  /* Default background color */
+  position: relative;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; /* Example shadow - Customize as needed */
+}
+.timeline-content h2 { /* Style the date */
+    margin-bottom: 10px;
+    color: var(--primary); /* Your primary orange */
+}
+
+.timeline-content p {
+    color: var(--text-color); /* Your default text color */
+}
+
+.timeline-content img {
+    margin-top: 10px;
+    width: 500px;
+    height: 300px;
+    border-radius: 6px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 767px) {
+    .timeline::after {
+        left: 3px;
+    }
+
+    .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-container.left {
+        left: 0;
+    }
+
+    .timeline-container.right {
+        left: 0;
+    }
+
+    .timeline-container.left::before {
+        right: 60px;
+        border: medium solid var(--light); /* Your default light color */
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent var(--light);
+    }
+
+    .timeline-container.right::before {
+        left: 60px;
+        border: medium solid var(--light); /* Your default light color */
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--light) transparent transparent;
+    }
 }
