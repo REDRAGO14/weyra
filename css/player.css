@@ -837,6 +837,25 @@
         font-size: 14px;
         padding: 5px 10px;
     }
+    .player-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      height: 
+      200px;
+      transition: transform 0.3s ease;
+      /* The following is important if you have a fixed width for .swiper-slide */
+     /*width: 100%;  */ /* important if .swiper-slide has a fixed width*/
+  }
+    .player-card img {
+      width: 100%;
+      display: block;
+      filter: brightness(1);
+      transition: filter 0.3s ease, transform 0.3s ease;
+      object-fit: cover;
+      height: 100%;
+    }
   }
   
   /* Pagination Styles */
@@ -1269,7 +1288,7 @@
       }
   
       .hero-content p {
-          font-size: 14px; /* Slightly smaller paragraph text */
+          font-size: 10px; /* Slightly smaller paragraph text */
       }
   }
         /* Example styles - replace with your desired colors, fonts, etc. */

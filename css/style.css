@@ -45,7 +45,7 @@ body.dark-mode .btn-sm-square i {
 }
 
 body.dark-mode .btn-primary {
-  background-color: #555; /* Or a darker color */
+  background-color: #c63030; /* Or a darker color */
   color: var(--text-color); /* Text color for buttons */
 }
 body.dark-mode .bg-head{
@@ -371,7 +371,7 @@ body.dark-mode .slider:before {
     font-size: x-large;
   }
   .row p{
-    font-size: medium;
+    font-size: 10px;
   }
   #header-carousel .carousel-item img {
     position: absolute;
@@ -379,6 +379,77 @@ body.dark-mode .slider:before {
     height: 100%;
     object-fit: cover;
   }
+}
+@media (max-width: 562px) {
+  #header-carousel .carousel-item {
+    position: relative;
+    min-height: 400px;
+  }
+  .logo{
+    width: 40px;
+  height: 40px;
+
+  }
+  .row h1{
+    font-size: larger;
+  }
+  .row p{
+    font-size: 10px;
+  }
+  #header-carousel .carousel-item img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /*** Button ***/
+.btn {
+  font-weight:1000;
+  transition: 0.5s;
+  font-size: 12px;
+}
+
+.btn.btn-primary,
+.btn.btn-outline-primary:hover {
+  color: #ffffff;
+}
+
+.btn.btn-primary:hover {
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn-square {
+  width: 28px;
+  height: 28px;
+}
+
+.btn-sm-square {
+  width: 22px;
+  height: 22px;
+  
+}
+.btn-sm-square i{
+  color: var(--dark);
+
+}
+
+
+.btn-lg-square {
+  width: 38px;
+  height: 38px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: small;
+}
+
 }
 
 .page-header {
@@ -1145,7 +1216,17 @@ body.dark-mode .service-item{
     width: 300px;
     height: 200px;
 }
-
+@media (max-width: 767px) {
+  .footer-logo{
+    width: 90px;
+    height: 100px;
+}
+.footer-loc img{
+    width: 200px;
+    height: 100px;
+}
+  
+}
 /* Add dark mode styles for the rest of your elements */
 
 /* ... (Dark mode styles for other sections) ... */
@@ -1592,10 +1673,14 @@ body.dark-mode .player-card:hover img {
         color: var(--primary); /* Your primary orange */
         font-size: 18px;
     }
+    .timeline-content h3 { /* Style the date */
+        
+        font-size: 22px;
+    }
     
     .timeline-content p {
         color: var(--text-color); /* Your default text color */
-        font-size: 13ipx;
+        font-size: 13px;
     }
     
     .timeline-content img {
@@ -1605,4 +1690,57 @@ body.dark-mode .player-card:hover img {
         border-radius: 6px;
     }
     
+}
+@media (max-width: 562px) {
+  .timeline::after {
+      left: 3px;
+  }
+
+  .timeline-container {
+      width: 100%;
+      padding-left: 50px;
+      padding-right: 15px;
+  }
+
+  .timeline-container.left {
+      left: 0;
+  }
+
+  .timeline-container.right {
+      left: 0;
+  }
+
+  
+
+  .timeline-container.right::before {
+      left:50px;
+      border: medium solid var(--light); /* Your default light color */
+      border-width: 10px 10px 10px 0;
+      border-color: transparent var(--light) transparent transparent;
+  }
+  .timeline-content {
+    padding: 10px 20px;
+    background-color: var(--background-color);  /* Default background color */
+    position: relative;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 3px 8px; /* Example shadow - Customize as needed */
+  }
+  .timeline-content h2 { /* Style the date */
+      margin-bottom: 4px;
+      color: var(--primary); /* Your primary orange */
+      font-size: 18px;
+  }
+  
+  .timeline-content p {
+      color: var(--text-color); /* Your default text color */
+      font-size: 10px;
+  }
+  
+  .timeline-content img {
+      margin-top: 10px;
+      width: 500px;
+      height: 150px;
+      border-radius: 6px;
+  }
+  
 }
