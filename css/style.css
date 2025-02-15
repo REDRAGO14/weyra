@@ -928,6 +928,25 @@ body.dark-mode .service-item{
       font-size: 14px;
       padding: 5px 10px;
   }
+  .player-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 7px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    height: 
+    300px;
+    transition: transform 0.3s ease;
+    /* The following is important if you have a fixed width for .swiper-slide */
+   /*width: 100%;  */ /* important if .swiper-slide has a fixed width*/
+}
+  .player-card img {
+    width: 100%;
+    display: block;
+    filter: brightness(1);
+    transition: filter 0.3s ease, transform 0.3s ease;
+    object-fit: cover;
+    height: 100%;
+  }
 }
 
 /* Pagination Styles */
@@ -1010,6 +1029,7 @@ body.dark-mode .service-item{
 .footer {
   color: var(--color-white);
   font-size: 14px;
+  margin-top: 20px;
 }
 
 .footer .footer-content {

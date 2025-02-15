@@ -838,6 +838,7 @@
         padding: 5px 10px;
     }
     .player-card {
+      margin-bottom: 20px;
       position: relative;
       overflow: hidden;
       border-radius: 10px;
