@@ -684,10 +684,7 @@
     filter: brightness(1.1);
   }
   
-  .play-button:hover,
-  .play-button i:hover {
-  }
-  
+
   /* Optional: Change color on hover */
   .play-button:hover,
   .play-button i:hover {
