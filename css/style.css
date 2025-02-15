@@ -1299,11 +1299,12 @@ body.dark-mode .player-card:hover img {
 }
 
 .contact .map {
-  align-items: center;
+  align-items: left;
 }
 
+
 .contact .map iframe {
-  margin-left: 220px;
+  margin-left: 15%;
   border: 0;
   width: 70%;
   height: 400px;
@@ -1527,7 +1528,7 @@ body.dark-mode .player-card:hover img {
   background-color: var(--background-color);  /* Default background color */
   position: relative;
   border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; /* Example shadow - Customize as needed */
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 3px 8px; /* Example shadow - Customize as needed */
 }
 .timeline-content h2 { /* Style the date */
     margin-bottom: 10px;
@@ -1578,4 +1579,29 @@ body.dark-mode .player-card:hover img {
         border-width: 10px 10px 10px 0;
         border-color: transparent var(--light) transparent transparent;
     }
+    .timeline-content {
+      padding: 20px 30px;
+      background-color: var(--background-color);  /* Default background color */
+      position: relative;
+      border-radius: 6px;
+      box-shadow: rgba(0, 0, 0, 0.7) 0px 3px 8px; /* Example shadow - Customize as needed */
+    }
+    .timeline-content h2 { /* Style the date */
+        margin-bottom: 7px;
+        color: var(--primary); /* Your primary orange */
+        font-size: 18px;
+    }
+    
+    .timeline-content p {
+        color: var(--text-color); /* Your default text color */
+        font-size: 13ipx;
+    }
+    
+    .timeline-content img {
+        margin-top: 10px;
+        width: 500px;
+        height: 150px;
+        border-radius: 6px;
+    }
+    
 }
