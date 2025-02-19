@@ -390,6 +390,9 @@ body.dark-mode .slider:before {
   height: 40px;
 
   }
+  .navbar-brand h1{
+    font-size: larger;
+  }
   .row h1{
     font-size: larger;
   }
@@ -1406,10 +1409,10 @@ body.dark-mode .player-card:hover img {
 
 
 .contact .map iframe {
-  margin-left: 15%;
+  margin-left: 12%;
   border: 0;
-  width: 70%;
-  height: 400px;
+  width: 80%;
+  height: 300px;
 }
 
 .contact .info {
